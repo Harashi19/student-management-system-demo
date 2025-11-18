@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/store';
 import { selectUserRoles } from '@/features/auth';
-import { AdminDashboard, TeacherDashboard, StudentDashboard } from '@/features/dashboard';
+import { AdminDashboard, TeacherDashboard, StudentDashboard, ParentDashboard } from '@/features/dashboard';
 import { Box, Typography, Paper } from '@mui/material';
 
 /**
@@ -24,25 +24,14 @@ export const Dashboard = () => {
   }
 
   if (userRoles.includes('PARENT')) {
-    return <ParentDashboardPlaceholder />;
+    return <ParentDashboard />;
   }
 
   // Default dashboard for other roles
   return <DefaultDashboard />;
 };
 
-// Placeholder components for other dashboards
-const ParentDashboardPlaceholder = () => (
-  <Box>
-    <Typography variant="h4" gutterBottom>
-      Parent Dashboard
-    </Typography>
-    <Paper sx={{ p: 3 }}>
-      <Typography>Parent dashboard coming soon...</Typography>
-    </Paper>
-  </Box>
-);
-
+// Placeholder component for other roles
 const DefaultDashboard = () => (
   <Box>
     <Typography variant="h4" gutterBottom>
