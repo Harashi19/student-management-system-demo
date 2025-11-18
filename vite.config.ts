@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   // Set base to your repo name for GitHub Pages
   // Change 'your-repo-name' to match your actual GitHub repository name
-  base: process.env.GITHUB_PAGES === 'true' ? '/your-repo-name/' : '/',
+  base: process.env.GITHUB_PAGES === 'true' ? '/student-management-system-demo/' : '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
