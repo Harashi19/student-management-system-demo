@@ -14,6 +14,9 @@ import { ErrorBoundary } from './components/common';
  * Sets up routing, theme, and Redux store
  */
 function App() {
+  // Set basename for GitHub Pages deployment
+  const basename = import.meta.env.BASE_URL || '/';
+
   return (
     <ErrorBoundary
       onError={(error, errorInfo) => {
@@ -25,7 +28,7 @@ function App() {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <BrowserRouter>
+          <BrowserRouter basename={basename}>
             <Routes>
               {/* Public Routes */}
               <Route path="/login" element={<LoginPage />} />
